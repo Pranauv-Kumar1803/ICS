@@ -1,6 +1,6 @@
 ## SmartVPN
 
-This is a repository containing code for demonstration of APT attacks for Introduction to Cyber Security Coursework in IIIT Sricity.
+This is a repository containing code for demonstration of APT attacks for Introduction to Cyber Security Coursework @ IIIT Sricity.
 
 This repo contains the server-side rendering code for a phishing website called as Smart VPN which has a maliicous .elf executable file as vpn_setup.elf which as the name suggests, is a fake VPN setup file which if executed, can open a connection to the attacker and spawn a shell of the victim's machine at the attacker's end.
 
